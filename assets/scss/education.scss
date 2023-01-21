@@ -1,0 +1,33 @@
+.education{
+    @include displayDirection(flex, column);
+    background-color: #302F3D;
+    border-radius: 20px;
+    padding: 30px;
+
+    .education--title{
+        color: #837E9F;
+        font-family: 'inter';
+        font-size: 1.45rem;
+        font-weight: 700;
+    }
+
+    .education_list{
+        margin-top: 24px;     
+        @include displayDirection(flex, column);
+
+
+        .education_list--item{
+            font-family: 'inter';
+            color: #837E9F;
+            margin-bottom: 22px;
+
+            .education_list--item--subtitle{
+                font-size: 1.2rem;
+            }
+
+            .education_list--item--desc{
+                font-size: 1rem;
+            }
+        }
+    }
+}
