@@ -1,8 +1,7 @@
 .left-nav{
  width: 100%;
  max-width: 348px;   
- display: flex;
- flex-direction: column;
+ @include displayDirection(flex,column);
  margin: 40px;
  gap: 30px;
 }

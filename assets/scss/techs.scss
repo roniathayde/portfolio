@@ -1,0 +1,29 @@
+.technologies{
+    @include displayDirection(flex, column);
+    background-color:#302F3D;
+    padding: 30px;
+    border-radius: 20px;
+
+    .technologies--title{
+        font-size: 1.25rem;
+        color: #837E9F;
+        font-family: 'inter';
+        font-weight: 700;
+    }
+
+    .technologies_list{
+        margin-top: 24px;
+        list-style: none;
+        @include displayDirection(flex, row);
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+
+        .technologies_list--item{
+            i{
+                font-size: 4rem;
+                color: #837E9F;
+            }
+        }
+    }
+}

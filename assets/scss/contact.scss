@@ -3,4 +3,47 @@
     background-color: #302F3D;
     border-radius: 20px;
     padding: 30px;
+
+    .contact_list{
+        list-style-type: none;
+        .contact_list--item{
+            @include displayDirection(flex,row);
+            align-items: center;
+            margin-bottom: 28px;
+
+            .contact_list--item_icon-ct{
+                margin-right: 12px;
+                i{
+                    color: #837E9F;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .contact_list--item--link{
+                width: 100%;
+                text-decoration: none;
+                color: #837E9F;
+                font-family: 'inter';
+                font-size: 1.1rem;
+                font-weight: 400;
+                &::after{
+                    transition: all 0.4s ease-in-out;
+                    content: '';
+                    display: block;
+                    height: 2px;
+                    width: 0px;
+                    background-color: #837E9F;
+                    margin-left: auto;
+                }
+
+                &:hover::after{
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+
+        }
+
+
+    }
 }
