@@ -209,6 +209,9 @@ body, html {
 
 .projects {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .projects .projects--title {
   font-size: 1.25rem;
@@ -217,16 +220,31 @@ body, html {
   margin-left: 12px;
   margin-bottom: 48px;
 }
+.projects .projects_list.hide-projects .projects_list_link:nth-child(n+5):nth-child(-n+200) {
+  opacity: 0;
+  height: 0;
+  position: absolute;
+  top: -1000px;
+}
 .projects .projects_list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
+  width: 100%;
+}
+.projects .projects_list .projects_list_link {
+  text-decoration: none;
+  transition: all 1s ease;
 }
 .projects .projects_list .projects_list_project {
   background-color: #302F3D;
   padding: 30px;
   border-radius: 20px;
   width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.projects .projects_list .projects_list_project:hover {
+  box-shadow: 5px 6px 12px -2px rgba(22, 22, 22, 0.7882352941);
 }
 .projects .projects_list .projects_list_project .projects_list_project_head {
   display: flex;
@@ -247,6 +265,44 @@ body, html {
   font-size: 1rem;
   color: #837E9F;
   font-family: "inter";
+}
+.projects .projects_list .projects_list_project .projects_list_project--foot {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.projects .projects_list .projects_list_project .projects_list_project--foot .projects_list_project--foot--star {
+  color: #837E9F;
+  margin-right: 12px;
+}
+.projects .projects_list .projects_list_project .projects_list_project--foot .projects_list_project--foot--star i {
+  margin-right: 6px;
+}
+.projects .projects_list .projects_list_project .projects_list_project--foot .projects_list_project--foot--watch {
+  color: #837E9F;
+}
+.projects .projects--btn {
+  color: #837E9F;
+  border-radius: 8px;
+  padding: 4px;
+  font-family: "inter";
+  font-size: 1.125rem;
+  background-color: transparent;
+  border: 2px solid #837E9F;
+  cursor: pointer;
+  margin-top: 48px;
+  width: 100%;
+  height: 100%;
+  max-width: 248px;
+  height: 40px;
+  transition: all 0.6s ease-in-out;
+  font-weight: 600;
+}
+.projects .projects--btn:hover {
+  color: #373541;
+  box-shadow: inset 1000px 0 10px #837e9f;
 }
 
 /*# sourceMappingURL=style.css.map */
