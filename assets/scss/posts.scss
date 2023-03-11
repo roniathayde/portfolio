@@ -1,4 +1,4 @@
-@keyframes fadeprojects {
+@keyframes fadeposts {
     from {
       opacity: 0;
       transform: translateY(5px);
@@ -18,31 +18,32 @@
     align-items: flex-start;
 
     
-    .projects--title{
+    .posts--title{
+        margin-top: 48px;
         font-size: 1.25rem; 
         color: #837E9F;
         font-family: 'inter';
         margin-left: 12px;
         margin-bottom: 48px;
     }
-    .projects_list .projects_list_link:nth-child(n+5):nth-child(-n+200) {
+    .posts_list .posts_list_link:nth-child(n+5):nth-child(-n+200) {
         display: none;
-        animation:  fadeprojects 1s ;
+        animation:  fadeposts 1s ;
 
     }
-    .projects_list{
+    .posts_list{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 30px;
         width: 100%;
  
-        .projects_list_link{
+        .posts_list_link{
             text-decoration: none;
             transition: all 1s ease;
             
         }
 
-        .projects_list_project{
+        .posts_list_project{
             background-color: #302F3D;
             padding: 30px;
             border-radius: 20px;
@@ -54,7 +55,7 @@
 
             }
     
-            .projects_list_project_head{
+            .posts_list_project_head{
                 @include displayDirection(flex, row);
                 align-items: center;
                 margin-bottom: 20px;
@@ -64,42 +65,44 @@
                     margin-right: 16px;
                 }
     
-                .projects_list_project_head--title{
+                .posts_list_project_head--title{
                     font-size: 1rem;
                     font-family: 'inter';
                     color: #837E9F;
                 }
             }
             
-            .projects_list_project--desc{
+            .posts_list_project--desc{
                 font-size: 1rem;
                 color: #837E9F;
                 font-family: 'inter';
             }
             
-            .projects_list_project--foot{
+            .posts_list_project--foot{
                 margin-top: 20px;
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-start;
-                align-items: center;
+                align-items: start;
 
-                .projects_list_project--foot--star{
+                .posts_list_project--foot--star{
                     i{
                         margin-right: 6px;
                     }
                         color: #837E9F;
                         margin-right: 12px;
+                        display: flex;
+                        flex-wrap: nowrap;
                 }
 
-                .projects_list_project--foot--watch{
+                .posts_list_project--foot--watch{
                     color: #837E9F;
                 }
             }
         }
     }
 
-    .projects--btn{
+    .posts--btn{
         color: #837E9F;
         border-radius: 8px;
         padding: 4px;

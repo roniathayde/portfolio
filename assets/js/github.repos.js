@@ -9,7 +9,7 @@ function createTemplateProject({name, html_url, languages_url, stargazers_count,
                 <h3 class="projects_list_project_head--title">${name}</h3>
             </header>
 
-            <p class="projects_list_project--desc">${description}
+            <p class="projects_list_project--desc">${ description ? description : "Visualize o projeto aqui"}
             </p>
 
             <footer class="projects_list_project--foot">
@@ -41,6 +41,7 @@ export  const createConectionGitHub = async function(){
         if (  response.ok || response.status < 400){
             
             const data = await response.json()
+
             
             data.forEach( project =>{
                 
@@ -57,8 +58,26 @@ export  const createConectionGitHub = async function(){
     
     document.querySelector('.projects--btn').addEventListener('click', function(){// toggle display block/none projects
 
-        document.querySelector('.projects_list').classList.toggle('hide-projects')
+        if (document.querySelector('.projects_list').dataset.displayProjects == 'hidden'){
 
+            document.querySelectorAll('.projects_list .projects_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
+                e.style.display = "block" 
+
+                document.querySelector('.projects_list').setAttribute('data-display-projects', 'visible')
+            })
+
+        }else if (document.querySelector('.projects_list').dataset.displayProjects == 'visible'){
+
+
+            document.querySelectorAll('.projects_list .projects_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
+                e.style.display = "none" 
+
+                document.querySelector('.projects_list').setAttribute('data-display-projects','hidden')
+                
+            })
+        } 
     })
 }
 
+
+// console.log(typeof document.querySelector('.projects_list').dataset.displayProjects)
