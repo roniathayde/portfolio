@@ -33,13 +33,13 @@ function createTemplateProject({name, html_url, languages_url, stargazers_count,
 }
 
 export  const createConectionGitHub = async function(){
-    
+    document.querySelector('.projects_list').textContent = "Carregando..."
     try{
         const response = await fetch('https://api.github.com/users/roniathayde/repos')
     
 
         if (  response.ok || response.status < 400){
-            
+            document.querySelector('.projects_list').textContent = ""
             const data = await response.json()
 
             
@@ -59,22 +59,22 @@ export  const createConectionGitHub = async function(){
     document.querySelector('.projects--btn').addEventListener('click', function(){// toggle display block/none projects
 
         if (document.querySelector('.projects_list').dataset.displayProjects == 'hidden'){
-
+            document.querySelector('.projects--btn').textContent = "Ver menos"
             document.querySelectorAll('.projects_list .projects_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
                 e.style.display = "block" 
 
-                document.querySelector('.projects_list').setAttribute('data-display-projects', 'visible')
             })
+            document.querySelector('.projects_list').setAttribute('data-display-projects', 'visible')
 
         }else if (document.querySelector('.projects_list').dataset.displayProjects == 'visible'){
-
+            document.querySelector('.projects--btn').textContent = "Ver mais";
 
             document.querySelectorAll('.projects_list .projects_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
                 e.style.display = "none" 
 
-                document.querySelector('.projects_list').setAttribute('data-display-projects','hidden')
                 
             })
+            document.querySelector('.projects_list').setAttribute('data-display-projects','hidden')
         } 
     })
 }

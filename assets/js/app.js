@@ -2,17 +2,13 @@
 
 import { createConectionGitHub } from './github.repos.js'
 import { createConectionMedium } from './medium.api.js';
+import { statusHeader } from './header.js';
+
 
 
 createConectionGitHub()
+createConectionMedium()
 
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-var requestOptions = {
-    method: "get",
-    headers: myHeaders,
-    redirect: "follow",
-    
-};
+document.querySelector('.heder_img-ct').addEventListener('click', statusHeader);
+document.querySelector('.popup-close').addEventListener('click', statusHeader);
 
-createConectionMedium();

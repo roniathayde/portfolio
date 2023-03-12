@@ -1,5 +1,5 @@
 function createTemplateProject({author, link, title, published, category}){
-    console.log(published)
+
     let date = new Date(published);
 
     let day = date.getDate();
@@ -43,15 +43,17 @@ function createTemplateProject({author, link, title, published, category}){
 }
 
 export  const createConectionMedium = async function(){
+    document.querySelector('.posts_list').textContent = "Carregando..."
     
     try{
         const response = await fetch('https://v1.nocodeapi.com/roniathayde/medium/XqURtubenXhWAjey')
-    
+
+
 
         if (  response.ok || response.status < 400){
-            
+            document.querySelector('.posts_list').textContent = "";
             const data = await response.json()
-            console.log('data', data);
+
             
             data.forEach( project =>{
                 
@@ -68,26 +70,24 @@ export  const createConectionMedium = async function(){
     
     document.querySelector('.posts--btn').addEventListener('click', function(){// toggle display block/none posts
 
-        if (document.querySelector('.posts_list').dataset.displayposts == 'hidden'){
-
+        if (document.querySelector('.posts_list').dataset.displayPosts == 'hidden'){
+            document.querySelector('.posts--btn').textContent = "Ver menos"
+            console.log('aparece')
             document.querySelectorAll('.posts_list .posts_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
                 e.style.display = "block" 
 
-                document.querySelector('.posts_list').setAttribute('data-display-posts', 'visible')
             })
+            document.querySelector('.posts_list').setAttribute('data-display-posts', 'visible')
 
-        }else if (document.querySelector('.posts_list').dataset.displayposts == 'visible'){
-
+        }else if (document.querySelector('.posts_list').dataset.displayPosts == 'visible'){
+            document.querySelector('.posts--btn').textContent = "Ver mais"
 
             document.querySelectorAll('.posts_list .posts_list_link:nth-child(n+5):nth-child(-n+200)').forEach( e =>{
                 e.style.display = "none" 
 
-                document.querySelector('.posts_list').setAttribute('data-display-posts','hidden')
                 
             })
+            document.querySelector('.posts_list').setAttribute('data-display-posts','hidden')
         } 
     })
 }
-
-
-console.log(typeof document.querySelector('.posts_list').dataset.displayposts)
