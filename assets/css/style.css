@@ -26,6 +26,16 @@ body, html {
   margin: 0;
 }
 
+@keyframes clickImagePopUp {
+  from {
+    opacity: 0;
+    transform: translate(30px, 30px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
 @keyframes fadePopUp {
   from {
     opacity: 0;
@@ -67,6 +77,7 @@ body, html {
   border: 1px solid grey;
   padding: 24px;
   animation: 1s fadePopUp;
+  z-index: 4;
 }
 .pop-up-header .popup-close {
   color: #837E9F;
@@ -148,6 +159,20 @@ body, html {
   max-width: 142px;
   max-height: 142px;
   border: 3px solid #079607;
+  cursor: pointer;
+  position: relative;
+}
+.header .heder_img-ct .heder_img-ct--image-click {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.header .heder_img-ct .heder_img-ct--image-click.animation-click {
+  animation-name: clickImagePopUp;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 .header .heder_img-ct .heder_img-ct--image {
   display: block;
@@ -447,7 +472,7 @@ body, html {
 }
 .projects .posts_list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
   width: 100%;
 }
@@ -488,21 +513,24 @@ body, html {
 .projects .posts_list .posts_list_project .posts_list_project--foot {
   margin-top: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: start;
+  gap: 10px;
 }
 .projects .posts_list .posts_list_project .posts_list_project--foot .posts_list_project--foot--star {
   color: #837E9F;
   margin-right: 12px;
   display: flex;
   flex-wrap: nowrap;
+  font-family: inter;
 }
 .projects .posts_list .posts_list_project .posts_list_project--foot .posts_list_project--foot--star i {
   margin-right: 6px;
 }
 .projects .posts_list .posts_list_project .posts_list_project--foot .posts_list_project--foot--watch {
   color: #837E9F;
+  font-family: "inter";
 }
 .projects .posts--btn {
   color: #837E9F;
