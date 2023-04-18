@@ -2,7 +2,9 @@ body,html{
     background-color: #22212C;
     width: 100%;
     display: flex;
-    
+    @media  (max-width:830px) {
+        flex-direction: column;
+    }
     
 }
 *{

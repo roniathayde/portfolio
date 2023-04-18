@@ -26,16 +26,17 @@
         margin-left: 12px;
         margin-bottom: 48px;
     }
-    .posts_list .posts_list_link:nth-child(n+5):nth-child(-n+200) {
-        display: none;
-        animation:  fadeposts 1s ;
-
-    }
     .posts_list{
         display: grid;
         grid-template-columns: 1fr;
         gap: 30px;
         width: 100%;
+
+        @media  (max-width:830px) {
+            display: flex;
+            flex-direction: column;
+        }
+
  
         .posts_list_link{
             text-decoration: none;
@@ -49,6 +50,7 @@
             border-radius: 20px;
             width: 100%;
             transition: all 0.3s ease-in-out ;
+            overflow: hidden;
 
             &:hover{
                     box-shadow: 5px 6px 12px -2px #161616c9;
@@ -100,6 +102,13 @@
                     .posts_list_project--foot--watch{
                         color: #837E9F;
                         font-family: 'inter';
+
+                    span{
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+
                 }
             }
         }

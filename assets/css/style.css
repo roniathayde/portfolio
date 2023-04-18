@@ -7,17 +7,35 @@
   margin: 40px;
   gap: 30px;
 }
+@media (max-width: 830px) {
+  .left-nav {
+    max-width: 100%;
+    margin: 0;
+    padding: 16px;
+  }
+}
 
 .main {
   display: flex;
   width: 100%;
   margin: 40px;
 }
+@media (max-width: 830px) {
+  .main {
+    margin: 0;
+    padding: 16px;
+  }
+}
 
 body, html {
   background-color: #22212C;
   width: 100%;
   display: flex;
+}
+@media (max-width: 830px) {
+  body, html {
+    flex-direction: column;
+  }
 }
 
 * {
@@ -369,6 +387,11 @@ body, html {
   gap: 30px;
   width: 100%;
 }
+@media (max-width: 1200px) {
+  .projects .projects_list {
+    grid-template-columns: 1fr;
+  }
+}
 .projects .projects_list .projects_list_link {
   text-decoration: none;
   transition: all 1s ease;
@@ -466,15 +489,17 @@ body, html {
   margin-left: 12px;
   margin-bottom: 48px;
 }
-.projects .posts_list .posts_list_link:nth-child(n+5):nth-child(-n+200) {
-  display: none;
-  animation: fadeposts 1s;
-}
 .projects .posts_list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
   width: 100%;
+}
+@media (max-width: 830px) {
+  .projects .posts_list {
+    display: flex;
+    flex-direction: column;
+  }
 }
 .projects .posts_list .posts_list_link {
   text-decoration: none;
@@ -486,6 +511,7 @@ body, html {
   border-radius: 20px;
   width: 100%;
   transition: all 0.3s ease-in-out;
+  overflow: hidden;
 }
 .projects .posts_list .posts_list_project:hover {
   box-shadow: 5px 6px 12px -2px rgba(22, 22, 22, 0.7882352941);
@@ -531,6 +557,11 @@ body, html {
 .projects .posts_list .posts_list_project .posts_list_project--foot .posts_list_project--foot--watch {
   color: #837E9F;
   font-family: "inter";
+}
+.projects .posts_list .posts_list_project .posts_list_project--foot .posts_list_project--foot--watch span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .projects .posts--btn {
   color: #837E9F;

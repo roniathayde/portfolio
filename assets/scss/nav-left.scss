@@ -4,4 +4,10 @@
  @include displayDirection(flex,column);
  margin: 40px;
  gap: 30px;
+
+    @media  (max-width:830px) {
+        max-width: 100%;
+        margin: 0;
+        padding: 16px;
+    }
 }
